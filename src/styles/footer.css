@@ -1,0 +1,7 @@
+.footer { padding-block: 20px; border-top: 1px solid #f0f0ea; background: var(--color-hero-bg); }
+.footer__inner { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.logo--footer { font-size: 15px; }
+.logo--footer .logo__mark { width: 28px; height: 28px; font-size: 21px; }
+.footer p { margin: 0; color: var(--color-muted); font-size: 12px; }
+.footer p a { color: inherit; }
+.footer__link { color: var(--color-primary-dark); font-size: 12px; font-weight: 700; }

@@ -1,0 +1,40 @@
+.header { position: relative; z-index: 5; background: var(--color-hero-bg); }
+.header__inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: inline-flex; align-items: center; gap: 9px; color: var(--color-heading); font-size: 17px; font-weight: 700; white-space: nowrap; }
+.logo__mark { display: grid; width: 35px; height: 35px; place-items: center; font-size: 25px; }
+.logo__accent { color: var(--color-primary); }
+
+.nav-toggle { display: inline-flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 10px; border: 0; border-radius: 10px; background: transparent; cursor: pointer; }
+.nav-toggle:hover { background: rgba(148, 173, 47, .1); }
+.nav-toggle:focus-visible, .nav__link:focus-visible, .btn:focus-visible, .text-link:focus-visible, .footer__link:focus-visible { outline: 3px solid #348eff; outline-offset: 3px; }
+.nav-toggle__bar { width: 23px; height: 2px; border-radius: 2px; background: var(--color-heading); transition: transform .2s ease, opacity .2s ease; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:first-child { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:last-child { transform: translateY(-7px) rotate(-45deg); }
+.nav { position: absolute; top: 100%; right: 0; left: 0; display: none; padding: 8px 20px 16px; border-top: 1px solid rgba(51, 56, 86, .08); background: var(--color-hero-bg); box-shadow: 0 14px 18px rgba(43, 49, 69, .08); }
+.nav.is-open { display: block; }
+.nav__list { display: flex; flex-direction: column; gap: 2px; }
+.nav__link { display: block; padding: 12px 8px; border-radius: 8px; color: var(--color-heading); font-size: 14px; }
+.nav__link:hover { color: var(--color-primary-dark); background: rgba(148, 173, 47, .1); }
+
+.hero { overflow: hidden; background: var(--color-hero-bg); }
+.hero__inner { display: grid; grid-template-columns: 1fr; align-items: center; gap: 24px; padding-block: 28px 48px; }
+.hero__content { position: relative; z-index: 1; text-align: center; }
+.eyebrow { margin: 0 0 9px; color: var(--color-primary-dark); font-size: 11px; font-weight: 700; letter-spacing: .15em; line-height: 1.5; text-transform: uppercase; }
+.hero__title { margin: 0 0 12px; color: var(--color-heading); font-family: var(--font-heading); font-size: clamp(44px, 13vw, 64px); font-weight: 400; line-height: .99; text-transform: uppercase; }
+.hero__title span { display: block; }
+.hero__title--accent { color: var(--color-accent); }
+.hero__text { max-width: 390px; margin: 0 auto 20px; color: var(--color-text); font-size: 14px; line-height: 1.7; }
+.btn { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 8px; padding: 0 18px; border: 0; border-radius: 7px; background: linear-gradient(135deg, #2aa4a0, #178c8f); box-shadow: 0 5px 12px rgba(23, 140, 143, .22); color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; transition: transform .18s ease, box-shadow .18s ease; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(23, 140, 143, .28); }
+.hero__art { position: relative; width: min(100%, 370px); aspect-ratio: 1; justify-self: center; }
+.hero__image-wrap { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; border-radius: 0; background: transparent; }
+.hero__image { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+
+.image-frame { position: relative; overflow: hidden; background: var(--color-image-bg); }
+.image-frame > img { width: 100%; height: 100%; object-fit: contain; }
+.image-placeholder { display: none; position: absolute; inset: 0; align-items: center; justify-content: center; padding: 14px; color: #6f7480; font-size: 12px; font-weight: 500; text-align: center; }
+.image-frame.is-missing > img { display: none; }
+.image-frame.is-missing .image-placeholder { display: flex; }
+.hero__image-wrap.is-missing { border: 2px dashed rgba(51, 56, 86, .2); border-radius: 16px; }
+.hero__image-wrap.is-missing .image-placeholder { color: var(--color-heading); }

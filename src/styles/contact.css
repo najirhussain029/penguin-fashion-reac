@@ -1,0 +1,220 @@
+.support {
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.support__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 28px;
+}
+
+.support__content {
+  max-width: 520px;
+}
+
+.support__content h2 {
+  margin: 0 0 18px;
+  color: #111111;
+  font-family: var(--font-heading);
+  font-size: clamp(42px, 7vw, 86px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: none;
+}
+
+.support__content h2 span { display: block; }
+
+.support__content p {
+  margin: 0;
+  color: #3d3d3d;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 470px;
+}
+
+.support__highlight {
+  display: block;
+  width: min(100%, 350px);
+  height: 13px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  border-radius: 14px;
+  background: #f5d148;
+}
+
+.support__art {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 220px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.support__bubble {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #1f1f1f;
+  border-radius: 24px;
+}
+
+.support__bubble--yellow {
+  width: min(92%, 420px);
+  height: 170px;
+  background: #f7b93d;
+  border-radius: 24px 24px 26px 26px;
+  margin-right: 42px;
+  margin-bottom: 8px;
+}
+
+.support__bubble--teal {
+  width: min(92%, 420px);
+  height: 170px;
+  background: #52b0a9;
+  border-radius: 24px 24px 20px 20px;
+  margin-bottom: 0;
+}
+
+.support__bubble--yellow .dot {
+  width: 18px;
+  height: 18px;
+  margin: 0 8px;
+  border-radius: 50%;
+  background: rgba(17, 17, 17, 0.8);
+}
+
+.support__bubble--teal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 32px;
+}
+
+.support__bubble--teal .line {
+  display: block;
+  width: 100px;
+  height: 6px;
+  border-radius: 6px;
+  background: rgba(17, 17, 17, 0.8);
+  margin: 0 0 14px;
+}
+
+.support__bubble--teal .line--short { width: 54px; }
+.support__bubble--teal .line--mid { width: 74px; }
+
+.support__tail {
+  position: absolute;
+  right: 70px;
+  bottom: 8px;
+  width: 110px;
+  height: 30px;
+  border: 4px solid #1f1f1f;
+  border-top: 0;
+  border-left: 0;
+  border-radius: 0 0 18px 0;
+  transform: rotate(12deg);
+}
+
+.support__form-wrap {
+  width: min(100%, 460px);
+  margin-left: auto;
+  padding: 0 6px;
+}
+
+.support__form-wrap h3 {
+  margin: 0 0 16px;
+  color: #1a1a1a;
+  font-size: clamp(24px, 3vw, 42px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.support__form {
+  display: grid;
+  gap: 14px;
+}
+
+.support__field {
+  display: grid;
+  gap: 8px;
+}
+
+.support__field span {
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.support__field input,
+.support__field select,
+.support__field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
+  background: #eef2f5;
+  color: #1b1d1f;
+  font: inherit;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.support__field input::placeholder,
+.support__field textarea::placeholder {
+  color: #8a8f97;
+}
+
+.support__field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #1a1a1a 50%), linear-gradient(135deg, #1a1a1a 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 2px), calc(100% - 12px) calc(50% - 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.support__field textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.support__field input:focus,
+.support__field select:focus,
+.support__field textarea:focus {
+  outline: none;
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, .08);
+}
+
+.support__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #22a298 0%, #0f8d87 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(19, 141, 133, .2);
+}
+
+@media (min-width: 800px) {
+  .support__inner {
+    grid-template-columns: .92fr 1.08fr;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .support__art {
+    min-height: 330px;
+  }
+}
