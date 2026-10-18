@@ -9,7 +9,7 @@ export default function EmptyCart({ onContinue }) {
       </div>
       <h3>Your cart is empty</h3>
       <p>Looks like you haven't added any jackets yet. Find your perfect winter layer!</p>
-      <Button href="#products" onClick={onContinue}>Start shopping</Button>
+      <Button href="#products" onClick={onContinue}>Continue shopping</Button>
     </div>
   );
 }

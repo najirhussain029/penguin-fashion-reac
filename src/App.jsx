@@ -44,6 +44,7 @@ export default function App() {
           [...prev, { ...product, quantity: 1 }]
     );
 
+    setIsCartOpen(true);
     showToast(
       existing
         ? `${product.name} quantity increased to ${existing.quantity + 1}`

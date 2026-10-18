@@ -1,68 +1,93 @@
-Penguin Fashion (React)
+# Penguin Fashion (React)
 
-Task 04: the Task-02 Penguin Fashion HTML template converted into a React (Vite) application with a working shopping cart.
+Task 04 converts the Task-02 Penguin Fashion HTML template into a responsive React application built with Vite. It includes women's and men's jacket collections, an interactive shopping cart, and toast notifications.
 
-GitHub repository: najirhussain029/penguin-fashion-react
-Task-02 (original HTML version): najirhussain029/penguin-fashion
-Tech stack
-React 19 (functional components and hooks)
-Vite
-Plain CSS (the original Task-02 stylesheets, split by section, plus new files for the cart and toasts)
-Run locally
-bash
+- **GitHub repository:** [najirhussain029/penguin-fashion-react](https://github.com/najirhussain029/penguin-fashion-react)
+- **Original HTML project:** [najirhussain029/penguin-fashion](https://github.com/najirhussain029/penguin-fashion)
+
+## Tech stack
+
+- React 19 with functional components and hooks
+- Vite
+- Plain CSS, organized by page section and feature
+
+## Run locally
+
+```bash
 npm install
-npm run dev      # start the development server (http://localhost:5173)
-npm run build    # production build in /dist
-npm run preview  # preview the production build
-Features
-Women's and Men's collections, 10 products each, rendered from arrays with .map()
-Live cart badge in the navbar that updates in real time
-Slide-out cart drawer with thumbnail, unit price, quantity and line total
-+ / - quantity buttons and a trash button to remove an item
-Price summary: Subtotal, Tax, Shipping and Grand Total
-Empty-cart placeholder with an icon and a friendly message
-Toast notifications for add, remove and message-sent actions
-Fully responsive layout, including a mobile menu and a full-width cart drawer on phones
-Cart rules
-Clicking "Buy now" on a product already in the cart increases its quantity. No duplicate row is added.
-All state updates are immutable (map, filter and the spread operator). State is never mutated directly.
-- is disabled when the quantity is 1. Use the trash button to remove an item.
-Summary: Subtotal + 5% tax + ৳60 shipping (free for orders over ৳3,000) = Grand Total.
-Animations and interactions
-Product cards lift up and the image zooms on hover
-Buttons give press feedback, and "Buy now" briefly changes to "Added"
-The navbar cart badge pulses and the cart icon bounces when the count changes
-Toasts slide in and out automatically
-The cart drawer slides in from the right with a fading overlay
-Animations are reduced for users who prefer reduced motion
-Project structure
-text
+npm run dev      # Start the development server at http://localhost:5173
+npm run build    # Create the production build in dist/
+npm run preview  # Preview the production build locally
+```
+
+## Features
+
+### Storefront
+
+- Separate women's and men's jacket collections, with 10 products in each collection.
+- Product cards are rendered from product data arrays.
+- Responsive layout with a mobile navigation menu.
+- Shared color palette, typography, and button styling based on the original template.
+
+### Shopping cart
+
+- The navbar cart button displays the live total item quantity.
+- Selecting **Buy now** adds the product and opens the slide-out cart drawer.
+- The drawer shows each product's image, name, unit price, quantity controls, remove button, and line total.
+- Adding the same product again increases its quantity instead of creating a duplicate row.
+- The empty-cart view includes a message, shopping illustration, and **Continue shopping** link. The link closes the drawer and navigates to the products section.
+- The drawer closes using its close button, the page overlay, or the Escape key. Background scrolling is locked while it is open.
+- On narrow screens, the drawer fills the available width and the empty-cart content can scroll if needed.
+- Cart state is held in React while the app is open; it is not saved between page reloads.
+
+### Cart totals
+
+The cart summary displays subtotal, 5% tax, shipping, and grand total. Shipping is ৳60 for orders below ৳3,000 and free for orders of ৳3,000 or more. The total is calculated as:
+
+```text
+Subtotal + tax + shipping = grand total
+```
+
+The minus control cannot reduce an item's quantity below one; use the remove button to delete it.
+
+### Notifications and interactions
+
+- Toasts confirm product additions, removals, and successful contact form submissions. They dismiss automatically.
+- The checkout button displays a demo notice; payment and order processing are not connected.
+- Product cards and buttons provide hover, press, and added-to-cart feedback.
+- The cart badge pulses and the cart icon bounces when the item count changes.
+- The drawer slides in over a fading overlay.
+- Motion is reduced for users who enable their system's reduced-motion preference.
+
+## Project structure
+
+```text
 src/
-├── App.jsx                  # cartItems, toasts and drawer state (useState)
-├── main.jsx                 # entry point and CSS imports
-├── data/                    # products.js (10 women + 10 men), benefits.js, navLinks.js
-├── utils/                   # cart.js (totals, tax, shipping), format.js (৳ price)
-├── styles/                  # base, header-hero, products-benefits, contact, footer,
-│                            # responsive, ui, cart, toast
-├── assets/images/           # product and hero images
-└── components/
-    ├── ui/                  # Button, IconButton, Eyebrow, SectionHeading, Price,
-    │                        # Logo, ImageFrame, QuantityControl
-    ├── layout/              # Navbar, Footer
-    ├── sections/            # Hero, ProductSection, Benefits, Support, ContactForm
-    ├── product/             # ProductCard
-    ├── cart/                # CartButton, CartDrawer, CartItem, CartSummary,
-    │                        # EmptyCart, CartIcon, TrashIcon
-    └── feedback/            # Toast (ToastContainer)
-Component design
-Reusable UI: small pieces such as Button, IconButton, Price and QuantityControl are used across the whole site.
-Separate data layer: all product, benefit and menu data lives in src/data/. Components only receive props.
-Single source of truth: the cart state lives in App.jsx, so the navbar badge and the cart drawer always stay in sync.
-Pure helpers: cart maths and price formatting are in src/utils/, outside the components.
-Images
+├── App.jsx                  # Shared cart, drawer, and toast state
+├── main.jsx                 # App entry point and CSS imports
+├── assets/images/           # Bundled product and hero images
+├── components/
+│   ├── cart/                 # Cart button, drawer, items, summary, and empty state
+│   ├── feedback/             # Toast notifications
+│   ├── layout/               # Navbar and footer
+│   ├── product/              # Product card
+│   ├── sections/             # Hero, collections, benefits, and support form
+│   └── ui/                   # Reusable buttons, icons, price, and layout primitives
+├── data/                     # Product, benefit, and navigation data
+├── styles/                   # Base, section, responsive, cart, and toast styles
+└── utils/                    # Cart calculations and price formatting
+```
 
-The original Task-02 images are reused. To get 10 unique products per category, some images are colour-edited variants of the template jackets. They are bundled with the project, so the site works without an internet connection. These images are demo content for a learning project. To use real product photos, replace the files in src/assets/images/ and update the imports in src/data/products.js.
+## Implementation notes
 
-Author
+- `App.jsx` is the single source of truth for cart contents, so the navbar badge and drawer stay synchronized.
+- Cart updates are immutable; cart calculations and price formatting are kept in pure utility functions.
+- Reusable UI components receive their data and actions through props.
+
+## Images
+
+The original Task-02 images are reused. Some jacket images are color-edited variants to provide 10 distinct products per collection. Images are bundled locally, so the storefront does not depend on a remote image service. These are demo assets; to use different product photos, replace the files in `src/assets/images/` and update the imports in `src/data/products.js`.
+
+## Author
 
 Najir Hussain

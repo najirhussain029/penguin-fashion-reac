@@ -3,8 +3,7 @@
 .toast { display: flex; align-items: center; gap: 10px; max-width: min(360px, calc(100vw - 40px)); padding: 12px 16px; border-radius: 12px; background: var(--color-heading); box-shadow: 0 14px 30px rgba(33, 37, 59, .3); color: #fff; font-size: 14px; line-height: 1.4; pointer-events: auto; animation: toastIn .4s cubic-bezier(.2, .9, .3, 1.2) both; }
 .toast.is-leaving { animation: toastOut .3s ease forwards; }
 .toast__icon { display: grid; flex: 0 0 26px; width: 26px; height: 26px; place-items: center; border-radius: 50%; background: var(--color-primary); font-size: 14px; font-weight: 700; }
-.toast--remove .toast__icon { background: #e8503a; }
-.toast--info .toast__icon { background: #2aa4a0; }
+.toast--remove .toast__icon, .toast--info .toast__icon { background: var(--color-primary-dark); }
 @keyframes toastIn { from { opacity: 0; transform: translateX(-40px) scale(.9); } to { opacity: 1; transform: none; } }
 @keyframes toastOut { to { opacity: 0; transform: translateX(-40px) scale(.9); } }
 

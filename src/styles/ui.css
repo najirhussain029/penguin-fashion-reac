@@ -18,9 +18,9 @@ html { scroll-padding-top: 92px; }
 .icon-btn:hover:not(:disabled) { background: rgba(148, 173, 47, .15); border-color: var(--color-primary); }
 .icon-btn:active:not(:disabled) { transform: scale(.88); }
 .icon-btn:disabled { opacity: .35; cursor: not-allowed; }
-.icon-btn:focus-visible { outline: 3px solid #348eff; outline-offset: 2px; }
-.icon-btn--danger { color: #d64545; border-color: rgba(214, 69, 69, .25); }
-.icon-btn--danger:hover:not(:disabled) { background: #d64545; border-color: #d64545; color: #fff; }
+.icon-btn:focus-visible { outline: 3px solid var(--color-primary-dark); outline-offset: 2px; }
+.icon-btn--danger { color: var(--color-primary-dark); border-color: rgba(114, 137, 29, .3); }
+.icon-btn--danger:hover:not(:disabled) { background: var(--color-primary-dark); border-color: var(--color-primary-dark); color: #fff; }
 
 
 /* Product cards: elevation + image zoom */
