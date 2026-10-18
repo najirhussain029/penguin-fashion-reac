@@ -2,7 +2,8 @@
 
 Task 04 converts the Task-02 Penguin Fashion HTML template into a responsive React application built with Vite. It includes women's and men's jacket collections, an interactive shopping cart, and toast notifications.
 
-- **GitHub repository:** [najirhussain029/penguin-fashion-react](https://github.com/najirhussain029/penguin-fashion-react)
+- **Task 04 GitHub repository:** [najirhussain029/penguin-fashion-reac](https://github.com/najirhussain029/penguin-fashion-reac)
+- **Live website:** [penguin-fashion-reac.vercel.app](https://penguin-fashion-reac.vercel.app/)
 - **Original HTML project:** [najirhussain029/penguin-fashion](https://github.com/najirhussain029/penguin-fashion)
 
 ## Tech stack
